@@ -1,28 +1,74 @@
 .App {
   text-align: center;
-}
-
-.Result-Container {
-  display: flex;  
+  background-color: hsl(268, 75%, 9%);
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-}
-
-.Result {
-  padding: 40px;
-  color: red;
-  /* background-color: black; */
+  align-items: center;
 }
 
 .Button-Container {
   display: flex;
+  position: relative;
+  box-sizing: border-box;
+  /* display: inline-block; */
+  background-color: hsl(268, 71%, 12%);
   justify-content: center;
+  width: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
 }
 
 .Button {
-  padding: 20px;
-  color: red;
-  border-radius: 10px;
-  border: solid 1px black;
-  background-color: aqua;  
+  position: relative;
+  width: 20px;
+  height: 15px;
+  padding: 10px 20px 15px 20px;
+  margin: 3px 5px 3px 5px;
+  color: hsl(52, 100%, 62%);
+  border-radius: 7px;
+  background-color: hsl(268, 47%, 21%);
+  font-weight: bold;
+  /* box-shadow: 10px red; */
+}
+
+.Result-Container {
+  align-items: center;
+  width: 300px;
+  height: 80px;
+  border-radius: 5px;
+  margin-top: 50px;
+  margin-bottom: 15px;
+  display: inline-block;
+  justify-content: right;
+  background-color: hsl(268, 71%, 12%);
+}
+
+.Result {
+  padding: 40px;
+  color: hsl(52, 100%, 62%);
+  font-size: 32px;
+  justify-content: center;
+}
+
+.Reset {
+  width: 40px;
+  height: 15px;
+  padding: 10px 43px 15px 43px;
+  margin: 3px 5px 3px 5px;
+  background-color: hsl(281, 89%, 26%);
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+}
+
+.Equal {
+  width: 40px;
+  height: 15px;
+  padding: 10px 43px 15px 43px;
+  margin: 3px 5px 3px 5px;
+  background-color: hsl(176, 100%, 44%);
+  border-radius: 5px;
   font-weight: bold;
 }

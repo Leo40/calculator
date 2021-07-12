@@ -5,15 +5,16 @@ import { useState } from 'react';
 
 function App() {
 
-  const [value, setValue] = useState("Waraa");
+  const [value, setValue] = useState("RESULT GOES HERE");
 
   const handleClick = (clickedSymbol) => {
     setValue(clickedSymbol);
   }
   return (
     <div className="App">
+      <div className="Main-Container">
       <div className="Result-Container">
-        <div className="Result"><Result value={value} /></div>
+        <div className="Result"><Result value={value} /></div>        
       </div>
       <div className="Button-Container">
         <div className="Button"><Button symbol={7} handleClick={handleClick} /></div>
@@ -39,7 +40,12 @@ function App() {
         <div className="Button"><Button symbol={"/"} handleClick={handleClick} /></div>
         <div className="Button"><Button symbol={"x"} handleClick={handleClick} /></div>
       </div>
+      <div className="Button-Container">
+        <div className="Reset"><Button symbol={"RESET"} handleClick={handleClick} /></div>
+        <div className="Equal"><Button symbol={"="} handleClick={handleClick} /></div>
+      </div>
     </div >
+    </div>
   );
 }
 
