@@ -7,10 +7,11 @@ import { useState } from 'react';
 
 function App() {
 
-  const [value, setValue] = useState("RESULT GOES HERE");
+  const [value, setValue] = useState([]);
 
   const handleClick = (clickedSymbol) => {
-    setValue(clickedSymbol);
+    setValue([...value,
+      clickedSymbol]);
   }
   return (
     <div className="App">
