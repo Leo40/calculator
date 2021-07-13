@@ -1,6 +1,8 @@
 import './App.css';
 import Button from './components/Button';
 import Result from './components/Result';
+import Reset from './components/Reset';
+import Equal from './components/Equal';
 import { useState } from 'react';
 
 function App() {
@@ -17,32 +19,32 @@ function App() {
         <div className="Result"><Result value={value} /></div>        
       </div>
       <div className="Button-Container">
-        <div className="Button"><Button symbol={7} handleClick={handleClick} /></div>
-        <div className="Button"><Button symbol={8} handleClick={handleClick} /></div>
-        <div className="Button"><Button symbol={9} handleClick={handleClick} /></div>
-        <div className="Button"><Button symbol={"DEL"} handleClick={handleClick} /></div>
+        <div><Button symbol={7} handleClick={handleClick} /></div>
+        <div><Button symbol={8} handleClick={handleClick} /></div>
+        <div><Button symbol={9} handleClick={handleClick} /></div>
+        <div><Button symbol={"DEL"} handleClick={handleClick} /></div>
       </div>
       <div className="Button-Container">
-        <div className="Button"><Button symbol={4} handleClick={handleClick} /></div>
-        <div className="Button"><Button symbol={5} handleClick={handleClick} /></div>
-        <div className="Button"><Button symbol={6} handleClick={handleClick} /></div>
-        <div className="Button"><Button symbol={"+"} handleClick={handleClick} /></div>
+        <div><Button symbol={4} handleClick={handleClick} /></div>
+        <div><Button symbol={5} handleClick={handleClick} /></div>
+        <div><Button symbol={6} handleClick={handleClick} /></div>
+        <div><Button symbol={"+"} handleClick={handleClick} /></div>
       </div >
       <div className="Button-Container">
-        <div className="Button"><Button symbol={1} handleClick={handleClick} /></div>
-        <div className="Button"><Button symbol={2} handleClick={handleClick} /></div>
-        <div className="Button"><Button symbol={3} handleClick={handleClick} /></div>
-        <div className="Button"><Button symbol={"-"} handleClick={handleClick} /></div>
+        <div><Button symbol={1} handleClick={handleClick} /></div>
+        <div><Button symbol={2} handleClick={handleClick} /></div>
+        <div><Button symbol={3} handleClick={handleClick} /></div>
+        <div><Button symbol={"-"} handleClick={handleClick} /></div>
       </div>
       <div className="Button-Container">
-        <div className="Button"><Button symbol={"."} handleClick={handleClick} /></div>
-        <div className="Button"><Button symbol={0} handleClick={handleClick} /></div>
-        <div className="Button"><Button symbol={"/"} handleClick={handleClick} /></div>
-        <div className="Button"><Button symbol={"x"} handleClick={handleClick} /></div>
+        <div><Button symbol={"."} handleClick={handleClick} /></div>
+        <div><Button symbol={0} handleClick={handleClick} /></div>
+        <div><Button symbol={"/"} handleClick={handleClick} /></div>
+        <div><Button symbol={"x"} handleClick={handleClick} /></div>
       </div>
       <div className="Button-Container">
-        <div className="Reset"><Button symbol={"RESET"} handleClick={handleClick} /></div>
-        <div className="Equal"><Button symbol={"="} handleClick={handleClick} /></div>
+        <div ><Reset symbol={"RESET"} handleClick={handleClick} /></div>
+        <div ><Equal symbol={"="} handleClick={handleClick} /></div>
       </div>
     </div >
     </div>
