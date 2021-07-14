@@ -4,6 +4,7 @@ import Result from './components/Result';
 import Reset from './components/Reset';
 import Equal from './components/Equal';
 import { useState } from 'react';
+import Delete from './components/Delete';
 
 function App() {
 
@@ -17,6 +18,11 @@ function App() {
     setValue(["0"]);
   }
 
+  const handleDelete = () => {
+    value[0].length === 1 ? setValue([value]) : value.pop();
+    setValue([value]);
+  }
+
   return (
     <div className="App">
       <div className="Main-Container">
@@ -27,7 +33,7 @@ function App() {
         <div><Button symbol={7} handleClick={handleClick} /></div>
         <div><Button symbol={8} handleClick={handleClick} /></div>
         <div><Button symbol={9} handleClick={handleClick} /></div>
-        <div><Button symbol={"DEL"} handleClick={handleClick} /></div>
+        <div><Delete symbol={"DEL"} handleDelete={handleDelete} /></div>
       </div>
       <div className="Button-Container">
         <div><Button symbol={4} handleClick={handleClick} /></div>
