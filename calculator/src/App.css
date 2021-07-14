@@ -41,15 +41,16 @@
   margin-top: 50px;
   margin-bottom: 15px;
   display: inline-block;
-  justify-content: right;
+  justify-content: flex-end;
   background-color: hsl(268, 71%, 12%);
 }
 
 .Result {
-  padding: 40px;
+  padding: 40px 10px 0px;
   color: hsl(52, 100%, 62%);
   font-size: 32px;
-  justify-content: center;
+  justify-content: flex-end;
+  text-align: right;
 }
 
 .Reset {
