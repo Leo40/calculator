@@ -9,14 +9,8 @@ function App() {
 
   const [value, setValue] = useState(["0"]);
 
-  const handleClick = (clickedSymbol) => {
-    if(value[0].length === 1) {
-      setValue([clickedSymbol]);
-    }
-    else{
-    setValue([...value,
-      clickedSymbol]);
-    }
+  const handleClick = (clickedSymbol) => {    
+    value[0].length === 1 ? setValue([clickedSymbol]) : setValue([...value, clickedSymbol]);
   }
 
   const handleReset = () => {
