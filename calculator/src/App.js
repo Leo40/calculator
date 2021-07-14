@@ -7,12 +7,22 @@ import { useState } from 'react';
 
 function App() {
 
-  const [value, setValue] = useState([]);
+  const [value, setValue] = useState(["0"]);
 
   const handleClick = (clickedSymbol) => {
+    if(value[0].length === 1) {
+      setValue([clickedSymbol]);
+    }
+    else{
     setValue([...value,
       clickedSymbol]);
+    }
   }
+
+  const handleReset = () => {
+    setValue(["0"]);
+  }
+
   return (
     <div className="App">
       <div className="Main-Container">
@@ -44,7 +54,7 @@ function App() {
         <div><Button symbol={"x"} handleClick={handleClick} /></div>
       </div>
       <div className="Button-Container">
-        <div ><Reset symbol={"RESET"} handleClick={handleClick} /></div>
+        <div ><Reset symbol={"RESET"} handleReset={handleReset} /></div>
         <div ><Equal symbol={"="} handleClick={handleClick} /></div>
       </div>
     </div >
