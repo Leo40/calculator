@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Reset({ symbol, handleClick }) {
+function Reset({ symbol, handleReset }) {
     return (
-        <div className="Reset" onClick={() => { handleClick(symbol) }}>
+        <div className="Reset" onClick={() => { handleReset() }}>
             {symbol}
         </div>
     )
