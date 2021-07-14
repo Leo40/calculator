@@ -4,23 +4,23 @@ import Result from './components/Result';
 import Reset from './components/Reset';
 import Equal from './components/Equal';
 import { useState } from 'react';
+import Delete from './components/Delete';
 
 function App() {
 
   const [value, setValue] = useState(["0"]);
 
-  const handleClick = (clickedSymbol) => {
-    if(value[0].length === 1) {
-      setValue([clickedSymbol]);
-    }
-    else{
-    setValue([...value,
-      clickedSymbol]);
-    }
+  const handleClick = (clickedSymbol) => {    
+    value[0].length === 1 ? setValue([clickedSymbol]) : setValue([...value, clickedSymbol]);
   }
 
   const handleReset = () => {
     setValue(["0"]);
+  }
+
+  const handleDelete = () => {
+    value[0].length === 1 ? setValue([value]) : value.pop();
+    setValue([value]);
   }
 
   return (
@@ -33,7 +33,7 @@ function App() {
         <div><Button symbol={7} handleClick={handleClick} /></div>
         <div><Button symbol={8} handleClick={handleClick} /></div>
         <div><Button symbol={9} handleClick={handleClick} /></div>
-        <div><Button symbol={"DEL"} handleClick={handleClick} /></div>
+        <div><Delete symbol={"DEL"} handleDelete={handleDelete} /></div>
       </div>
       <div className="Button-Container">
         <div><Button symbol={4} handleClick={handleClick} /></div>

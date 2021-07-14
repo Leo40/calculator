@@ -53,10 +53,9 @@
   text-align: right;
 }
 
-.Reset {
-  width: 40px;
+.Reset,
+.Delete {
   height: 15px;
-  padding: 10px 43px 15px 43px;
   margin: 3px 5px 3px 5px;
   background-color: hsl(281, 89%, 26%);
   border-radius: 5px;
@@ -64,6 +63,16 @@
   color: white;
   box-shadow: 0px 2px hsl(285, 91%, 52%);
   cursor: pointer;
+}
+
+.Reset {
+  width: 40px;
+  padding: 10px 43px 15px 43px;
+}
+
+.Delete {
+  width: 20px;
+  padding: 10px 20px 15px 20px;
 }
 
 .Equal {
