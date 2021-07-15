@@ -5,6 +5,7 @@ import Reset from './components/Reset';
 import Equal from './components/Equal';
 import { useState } from 'react';
 import Delete from './components/Delete';
+import Header from './components/Header';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <div className="Main-Container">
       <div className="Result-Container">
         <div className="Result"><Result value={value} /></div>        
