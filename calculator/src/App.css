@@ -1,17 +1,33 @@
+@import url("https://fonts.google.com/specimen/Spartan");
+
 .App {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
   text-align: center;
   background-color: hsl(268, 75%, 9%);
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: hsl(52, 100%, 62%);
+  /* font-family: "Spartan"; */
+  font-weight: 700;
+}
+
+.Header {
+  display: flex;
+  width: 300px;
+  flex-direction: row;
+  align-items: flex-end;
 }
 
 .Button-Container {
   display: flex;
   position: relative;
   box-sizing: border-box;
-  /* display: inline-block; */
   background-color: hsl(268, 71%, 12%);
   justify-content: center;
   width: auto;
@@ -26,7 +42,6 @@
   height: 15px;
   padding: 10px 20px 15px 20px;
   margin: 3px 5px 3px 5px;
-  color: hsl(52, 100%, 62%);
   border-radius: 7px;
   background-color: hsl(268, 47%, 21%);
   font-weight: bold;
@@ -34,23 +49,22 @@
 }
 
 .Result-Container {
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   width: 300px;
   height: 80px;
   border-radius: 5px;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-bottom: 15px;
-  display: inline-block;
-  justify-content: flex-end;
   background-color: hsl(268, 71%, 12%);
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .Result {
-  padding: 40px 10px 0px;
-  color: hsl(52, 100%, 62%);
   font-size: 32px;
-  justify-content: flex-end;
   text-align: right;
+  padding-right: 15px;
 }
 
 .Reset,
@@ -84,4 +98,44 @@
   border-radius: 5px;
   font-weight: bold;
   box-shadow: 0px 2px hsl(177, 92%, 70%);
+  color: black;
+}
+
+.Left-Section {
+  display: flex;
+  flex-basis: 50%;
+}
+
+.Right-Section {
+  display: flex;
+  flex-basis: 50%;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-size: 8px;
+}
+
+.Toggle {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-left: 10px;
+  justify-content: flex-end;
+  letter-spacing: 3px;
+}
+.Outer {
+  display: flex;
+  width: 33px;
+  height: 15px;
+  background-color: hsl(268, 71%, 12%);
+  border-radius: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.Inner {
+  display: flex;
+  background-color: hsl(176, 100%, 44%);
+  width: 8px;
+  height: 8px;
+  border-radius: 10px;
 }
