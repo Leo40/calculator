@@ -2,7 +2,7 @@ import React from 'react'
 
 function Delete({ symbol, handleDelete }) {
     return (
-        <div className="Delete" onClick={() => { handleDelete() }}>
+        <div onClick={() => { handleDelete() }}>
         {symbol}
     </div>
     )
