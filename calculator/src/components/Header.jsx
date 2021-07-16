@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Header() {
+function Header({ handleToggle }) {
     return (
         <div className="Header">
             <div className="Left-Section">
@@ -11,8 +11,10 @@ function Header() {
                     THEME
                 </div>
                 <div className="Toggle">
-                    <div>
-                        1 2 3
+                    <div className="toggle-group" >
+                        <div className="toggle-number" onClick={() => { handleToggle("1") }}>1</div>
+                        <div className="toggle-number" onClick={() => { handleToggle("2") }}>2</div>
+                        <div className="toggle-number" onClick={() => { handleToggle("3") }}>3</div>
                     </div>
                     <div>
                         <div className="Outer">
