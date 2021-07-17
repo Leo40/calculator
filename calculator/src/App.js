@@ -8,7 +8,7 @@ import * as math from "mathjs";
 function App() {
 
   const [value, setValue] = useState(["0"]);
-  const [theme, setTheme] = useState("theme-one");  
+  const [theme, setTheme] = useState("theme-one");
   const [altColorOne, setAltColorOne] = useState("hsl(225, 21%, 49%)");
   const [altColorTwo, setAltColorTwo] = useState("hsl(6, 63%, 50%)");
 
@@ -20,7 +20,39 @@ function App() {
     }
   }, []);
 
-  const handleClick = (clickedSymbol) => {    
+  useEffect(() => {
+    if(theme === "theme-one") {
+      document.body.style = 'background: hsl(222, 26%, 31%;';
+      setAltColorOne("hsl(225, 21%, 49%)");
+      setAltColorTwo("hsl(6, 63%, 50%)");
+    }
+
+    if(theme === "theme-two") {
+      document.body.style = 'background: hsl(0, 0%, 90%);';
+      setAltColorOne("hsl(185, 42%, 37%)");
+      setAltColorTwo("hsl(25, 98%, 40%)");
+    }
+
+    if (theme === "theme-three") {
+      document.body.style = 'background: hsl(268, 75%, 9%);';
+      setAltColorOne("hsl(281, 89%, 26%)");
+      setAltColorTwo("hsl(176, 100%, 44%)");
+    }
+
+    localStorage.setItem('theme', theme);
+  }, [theme]); // JST: Previous code only works because body color and altColors
+               //      are not loaded after a refresh. Adding this code in a useEffect
+               //      will make sure this code is rendered every time the state variable
+               //      theme is updated
+
+  const handleClick = (clickedSymbol) => {
+
+    // JST: Make sure can only be selected once
+    if (clickedSymbol === '.'
+      && value.indexOf(clickedSymbol) !== -1) {
+      return;
+    }
+
     value[0].length === 1 ? setValue([clickedSymbol]) : setValue([...value, clickedSymbol]);
   }
 
@@ -39,34 +71,14 @@ function App() {
   }
 
   const handleToggle = (theme) => {
-    setTheme(theme);    
+    setTheme(theme);
+  }
 
-    if(theme === "theme-one") {
-      document.body.style = 'background: hsl(222, 26%, 31%;';
-      setAltColorOne("hsl(225, 21%, 49%)");
-      setAltColorTwo("hsl(6, 63%, 50%)");
-    }
-
-    if(theme === "theme-two") {
-      document.body.style = 'background: hsl(0, 0%, 90%);';
-      setAltColorOne("hsl(185, 42%, 37%)");
-      setAltColorTwo("hsl(25, 98%, 40%)");
-    }
-
-    if (theme === "theme-three") {      
-      document.body.style = 'background: hsl(268, 75%, 9%);';
-      setAltColorOne("hsl(281, 89%, 26%)");
-      setAltColorTwo("hsl(176, 100%, 44%)");
-    }
-
-    localStorage.setItem('theme', theme);
-  }  
-  
   return (
     <div className={`App ${theme}`}>
       <Header handleToggle={handleToggle}/>
       <div className="result-container">
-        <div className="result"><Result value={value} /></div>        
+        <div className="result"><Result value={value} /></div>
       </div>
       <div className="keypad-container">
         <div className="key-row">
@@ -91,7 +103,12 @@ function App() {
           <div><Button symbol={"."} handleClick={handleClick} /></div>
           <div><Button symbol={0} handleClick={handleClick} /></div>
           <div><Button symbol={"/"} handleClick={handleClick} /></div>
-          <div><Button symbol={"x"} handleClick={handleClick} /></div>
+          {
+            // JST: Button symbol should say * for eval to work
+            //      because JS evaluation doesn't know x is a multiplication
+            //      operator
+          }
+          <div><Button symbol={"*"} handleClick={handleClick} /></div>
         </div>
         <div className="key-row">
           <div ><Button symbol={"RESET"} altColor={altColorOne} handleClick={handleReset} /></div>
