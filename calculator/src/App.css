@@ -24,114 +24,131 @@ body {
   font-weight: 700;
 }
 
-.Header {
+.header {
   display: flex;
-  width: 350px;
+  width: 550px;
   flex-direction: row;
   align-items: flex-end;
 }
 
-.Button-Row {
-  display: flex;
-  background-color: var(--button-row-background-color);
-  justify-content: center;
-  align-items: center;
-  padding: 5px 5px 5px 5px;
-  border-radius: 5px;
-  width: 340px;
-}
-
-.Result-Container {
+.result-container {
   display: flex;
   flex-direction: column;
-  width: 335px;
-  height: 80px;
-  border-radius: 5px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  width: 550px;
+  height: 130px;
+  border-radius: 10px;
+  margin: 15px 0px 15px 0px;
   background-color: var(--result-background-color);
   justify-content: center;
   align-items: flex-end;
   font-size: 32px;
   text-align: right;
-  padding-right: 15px;
+  padding-right: 38px;
+  box-sizing: border-box;
 }
 
-.Button {
+.keypad-container {
   display: flex;
-  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 550px;
+  height: 480px;
+  background-color: var(--keypad-background-color);
+  /* background-color: aqua; */
+  border-radius: 10px;
+  padding: 10px 5px 10px 5px;
+  box-sizing: border-box;
+}
+
+.key-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 5px 5px 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.key {
+  display: inline-flex;
+  /* flex: 1; */
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 20px;
-  padding: 10px 20px 15px 20px;
-  margin: 3px 5px 3px 5px;
+  width: 100px;
+  height: 60px;
+  /* padding: 10px 20px 15px 20px; */
+  margin: 12px 12px 12px 12px;
   border-radius: 7px;
-  background-color: var(--button-background-color);
+  background-color: var(--key-background-color);
+  font-size: 32px;
   font-weight: bold;
-  box-shadow: 0px 2px var(--button-shadow-color);
+  box-shadow: 0px 2px var(--key-shadow-color);
   color: var(--text-color-two);
   cursor: pointer;
 }
 
-.Left-Section {
+.left-section {
   display: flex;
   flex-basis: 50%;
 }
 
-.Right-Section {
+.right-section {
   display: flex;
   flex-basis: 50%;
   justify-content: flex-end;
   align-items: flex-end;
-  font-size: 8px;
+  font-size: 16px;
   color: var(--text-color-three);
 }
 
-.Toggle {
+.toggle {
   display: flex;
-  align-items: flex-start;
   flex-direction: column;
   padding-left: 10px;
   justify-content: flex-end;
   letter-spacing: 3px;
 }
 
-.Outer {
+.outer-slider {
   display: flex;
-  width: 32px;
-  height: 15px;
+  width: 70px;
+  height: 30px;
   background-color: hsl(268, 71%, 12%);
-  border-radius: 10px;
+  border-radius: 15px;
   align-items: center;
   justify-content: var(--toggle-position);
-  padding: 0px 2px 0px 2px;
+  padding: 5px 5px 5px 4px;
+  box-sizing: border-box;
 }
 
-.Inner {
+.inner-slider {
   display: flex;
   background-color: var(--toggle-color);
-  width: 8px;
-  height: 8px;
+  width: 20px;
+  height: 20px;
   border-radius: 10px;
 }
 
-.toggle-group {
+.toggle-number-group {
   display: flex;
+  width: 70px;
+  align-items: center;
+  justify-content: space-between;
   flex-direction: row;
 }
 
 .toggle-number {
-  padding-right: 6px;
+  display: flex;
   cursor: pointer;
 }
 
 .App.theme-one {
   --main-bg-color: hsl(222, 26%, 31%);
   --result-background-color: hsl(223, 31%, 20%);
-  --button-row-background-color: hsl(223, 31%, 20%);
-  --button-background-color: white;
-  --button-shadow-color: hsl(28, 16%, 65%);
+  --keypad-background-color: hsl(223, 31%, 20%);
+  --key-background-color: white;
+  --key-shadow-color: hsl(28, 16%, 65%);
   --text-color-one: white;
   --text-color-two: hsl(221, 14%, 31%);
   --toggle-position: flex-start;
@@ -141,9 +158,9 @@ body {
 .App.theme-two {
   --main-bg-color: white;
   --result-background-color: hsl(0, 0%, 93%);
-  --button-row-background-color: hsl(0, 5%, 81%);
-  --button-background-color: hsl(45, 7%, 89%);
-  --button-shadow-color: hsl(35, 11%, 61%);
+  --keypad-background-color: hsl(0, 5%, 81%);
+  --key-background-color: hsl(45, 7%, 89%);
+  --key-shadow-color: hsl(35, 11%, 61%);
   --text-color-one: hsl(60, 10%, 19%);
   --text-color-two: hsl(60, 10%, 19%);
   --text-color-three: hsl(60, 10%, 19%);
@@ -154,9 +171,9 @@ body {
 .App.theme-two {
   --main-bg-color: hsl(0, 0%, 90%);
   --result-background-color: hsl(0, 0%, 93%);
-  --button-row-background-color: hsl(0, 5%, 81%);
-  --button-background-color: hsl(45, 7%, 89%);
-  --button-shadow-color: hsl(35, 11%, 61%);
+  --keypad-background-color: hsl(0, 5%, 81%);
+  --key-background-color: hsl(45, 7%, 89%);
+  --key-shadow-color: hsl(35, 11%, 61%);
   --text-color-one: hsl(60, 10%, 19%);
   --text-color-two: hsl(60, 10%, 19%);
   --text-color-three: hsl(60, 10%, 19%);
@@ -167,12 +184,49 @@ body {
 .App.theme-three {
   --main-bg-color: hsl(268, 75%, 9%);
   --result-background-color: hsl(268, 71%, 12%);
-  --button-row-background-color: hsl(268, 71%, 12%);
-  --button-background-color: hsl(268, 47%, 21%);
-  --button-shadow-color: hsl(290, 70%, 36%);
+  --keypad-background-color: hsl(268, 71%, 12%);
+  --key-background-color: hsl(268, 47%, 21%);
+  --key-shadow-color: hsl(290, 70%, 36%);
   --text-color-one: hsl(52, 100%, 62%);
   --text-color-two: hsl(52, 100%, 62%);
   --text-color-three: hsl(52, 100%, 62%);
   --toggle-position: flex-end;
   --toggle-color: hsl(176, 100%, 44%);
+}
+
+@media screen and (max-width: 375px) {
+  /* body {
+    background-color: lightblue;
+  } */
+
+  .header,
+  .result-container,
+  .keypad-container,
+  .key-row {
+    width: 327px;
+  }
+
+  .result-container {
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+
+  .keypad-container {
+    height: 420px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .key-row {
+  }
+
+  .key {
+    height: 60px;
+    width: 60px;
+    margin: 7px;
+  }
+
+  .left-section {
+    font-size: 32px;
+  }
 }
