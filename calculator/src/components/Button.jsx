@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Button({ symbol, handleClick, altColor }) {
+function Button({ symbol, className, handleClick, altColor }) {
     return (
-        <div className="key" 
+        <div className={className ?? 'key'}
         style={{backgroundColor: altColor}}
         onClick={() => { handleClick(symbol) }}>
             {symbol}

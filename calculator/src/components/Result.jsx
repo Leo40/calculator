@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Result({ value }) {
+function Result({ input }) {
     return (
         <div>
-            {value}
+            {input}
         </div>
     )
 }

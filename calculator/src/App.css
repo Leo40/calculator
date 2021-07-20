@@ -1,27 +1,31 @@
-@import url("https://fonts.google.com/specimen/Spartan");
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
 
 :root {
-  --base: hsl(222, 26%, 31%);
+  --base: hsl(222, 15%, 50%);
+  height: 100vh;
+  width: 100%;
+  margin: 0;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: var(--base);
-  margin: 0;
+* {
   padding: 0;
-  /* font-family: "Spartan"; */
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-app-region: none;
+  font-family: "Spartan";
 }
 
 .App {
   display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   width: 100%;
   background-color: var(--main-bg-color);
   color: var(--text-color-one);
-  font-weight: 700;
 }
 
 .header {
@@ -41,7 +45,7 @@ body {
   background-color: var(--result-background-color);
   justify-content: center;
   align-items: flex-end;
-  font-size: 32px;
+  font-size: 46px;
   text-align: right;
   padding-right: 38px;
   box-sizing: border-box;
@@ -55,7 +59,6 @@ body {
   width: 550px;
   height: 480px;
   background-color: var(--keypad-background-color);
-  /* background-color: aqua; */
   border-radius: 10px;
   padding: 10px 5px 10px 5px;
   box-sizing: border-box;
@@ -63,34 +66,59 @@ body {
 
 .key-row {
   display: flex;
+  flex: 1;
   justify-content: center;
   align-items: center;
   padding: 5px 5px 5px 5px;
-  width: 100%;
+  width: 540px;
   box-sizing: border-box;
 }
 
-.key {
-  display: inline-flex;
-  /* flex: 1; */
+.key,
+.equal,
+.delete,
+.reset {
+  display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
-  width: 100px;
   height: 60px;
-  /* padding: 10px 20px 15px 20px; */
   margin: 12px 12px 12px 12px;
   border-radius: 7px;
   background-color: var(--key-background-color);
   font-size: 32px;
   font-weight: bold;
-  box-shadow: 0px 2px var(--key-shadow-color);
+  box-shadow: 0px 5px var(--key-shadow-color);
   color: var(--text-color-two);
   cursor: pointer;
+}
+
+.delete {
+  color: white;
+  background-color: var(--delete-btn-color);
+  box-shadow: 0px 5px var(--delete-shadow-color);
+  font-size: 20px;
+}
+
+.reset {
+  color: white;
+  background-color: var(--reset-btn-color);
+  box-shadow: 0px 5px var(--delete-shadow-color);
+  font-size: 20px;
+}
+
+.equal {
+  color: white;
+  background-color: var(--equal-btn-color);
+  box-shadow: 0px 5px var(--equal-shadow-color);
+  font-size: 20px;
 }
 
 .left-section {
   display: flex;
   flex-basis: 50%;
+  font-size: 24px;
+  font-weight: 900;
 }
 
 .right-section {
@@ -98,7 +126,7 @@ body {
   flex-basis: 50%;
   justify-content: flex-end;
   align-items: flex-end;
-  font-size: 16px;
+  font-size: 10px;
   color: var(--text-color-three);
 }
 
@@ -118,7 +146,7 @@ body {
   border-radius: 15px;
   align-items: center;
   justify-content: var(--toggle-position);
-  padding: 5px 5px 5px 4px;
+  padding: 7px;
   box-sizing: border-box;
 }
 
@@ -127,12 +155,14 @@ body {
   background-color: var(--toggle-color);
   width: 20px;
   height: 20px;
-  border-radius: 10px;
+  border-radius: 50%;
+  z-index: 1;
 }
 
 .toggle-number-group {
   display: flex;
-  width: 70px;
+  margin-left: 7px;
+  width: 60px;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
@@ -148,37 +178,33 @@ body {
   --result-background-color: hsl(223, 31%, 20%);
   --keypad-background-color: hsl(223, 31%, 20%);
   --key-background-color: white;
-  --key-shadow-color: hsl(28, 16%, 65%);
+  --key-shadow-color: hsl(35, 11%, 61%);
+  --delete-shadow-color: hsl(224, 28%, 35%);
+  --equal-shadow-color: hsl(6, 70%, 34%);
   --text-color-one: white;
   --text-color-two: hsl(221, 14%, 31%);
   --toggle-position: flex-start;
   --toggle-color: hsl(6, 63%, 50%);
+  --delete-btn-color: hsl(225, 21%, 49%);
+  --equal-btn-color: hsl(6, 63%, 50%);
+  --reset-btn-color: hsl(225, 21%, 49%);
 }
-
-.App.theme-two {
-  --main-bg-color: white;
-  --result-background-color: hsl(0, 0%, 93%);
-  --keypad-background-color: hsl(0, 5%, 81%);
-  --key-background-color: hsl(45, 7%, 89%);
-  --key-shadow-color: hsl(35, 11%, 61%);
-  --text-color-one: hsl(60, 10%, 19%);
-  --text-color-two: hsl(60, 10%, 19%);
-  --text-color-three: hsl(60, 10%, 19%);
-  --toggle-position: center;
-  --toggle-color: hsl(25, 98%, 40%);
-}
-
 .App.theme-two {
   --main-bg-color: hsl(0, 0%, 90%);
   --result-background-color: hsl(0, 0%, 93%);
   --keypad-background-color: hsl(0, 5%, 81%);
-  --key-background-color: hsl(45, 7%, 89%);
   --key-shadow-color: hsl(35, 11%, 61%);
+  --delete-shadow-color: hsl(185, 58%, 25%);
+  --equal-shadow-color: hsl(25, 99%, 27%);
+  --key-background-color: hsl(45, 7%, 89%);
   --text-color-one: hsl(60, 10%, 19%);
   --text-color-two: hsl(60, 10%, 19%);
   --text-color-three: hsl(60, 10%, 19%);
   --toggle-position: center;
   --toggle-color: hsl(25, 98%, 40%);
+  --delete-btn-color: hsl(185, 42%, 37%);
+  --equal-btn-color: hsl(25, 98%, 40%);
+  --reset-btn-color: hsl(185, 42%, 37%);
 }
 
 .App.theme-three {
@@ -187,11 +213,16 @@ body {
   --keypad-background-color: hsl(268, 71%, 12%);
   --key-background-color: hsl(268, 47%, 21%);
   --key-shadow-color: hsl(290, 70%, 36%);
+  --delete-shadow-color: hsl(285, 91%, 52%);
+  --equal-shadow-color: hsl(177, 92%, 70%);
   --text-color-one: hsl(52, 100%, 62%);
   --text-color-two: hsl(52, 100%, 62%);
   --text-color-three: hsl(52, 100%, 62%);
   --toggle-position: flex-end;
   --toggle-color: hsl(176, 100%, 44%);
+  --delete-btn-color: hsl(281, 89%, 26%);
+  --equal-btn-color: hsl(176, 100%, 44%);
+  --reset-btn-color: hsl(281, 89%, 26%);
 }
 
 @media screen and (max-width: 375px) {
@@ -203,27 +234,54 @@ body {
   .result-container,
   .keypad-container,
   .key-row {
-    width: 327px;
+    width: 340px;
+  }
+
+  .app-wrapper {
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 
   .result-container {
+    height: 100px;
     margin-top: 50px;
     margin-bottom: 30px;
+    font-size: 30px;
   }
 
   .keypad-container {
-    height: 420px;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    height: 460px;
   }
 
   .key-row {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .key,
+  .delete,
+  .equal,
+  .reset {
+    margin: 7px;
   }
 
   .key {
-    height: 60px;
-    width: 60px;
-    margin: 7px;
+    box-shadow: 0px 4px var(--key-shadow-color);
+  }
+  .delete {
+    box-shadow: 0px 4px var(--delete-shadow-color);
+  }
+
+  .reset {
+    box-shadow: 0px 4px var(--delete-shadow-color);
+  }
+
+  .equal {
+    box-shadow: 0px 4px var(--equal-shadow-color);
+  }
+
+  .toggle {
+    margin-left: 15px;
   }
 
   .left-section {

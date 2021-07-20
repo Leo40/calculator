@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Header({ handleToggle }) {
+function Header({ handleToggle, handleSliderToggle }) {
     return (
         <div className="header">
             <div className="left-section">
-                Calc
+                calc
             </div>
             <div className="right-section"> 
                 <div>
@@ -17,7 +17,7 @@ function Header({ handleToggle }) {
                         <div className="toggle-number" onClick={() => { handleToggle("theme-three") }}>3</div>
                     </div>
                     <div>
-                        <div className="outer-slider">
+                        <div className="outer-slider" onClick={handleSliderToggle}>
                             <div className="inner-slider"></div>
                         </div>
                     </div>
